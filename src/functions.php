@@ -51,3 +51,15 @@ function slugify($string)
 {
     return strtolower(trim(preg_replace('/[^\w\d-]+/', '-', $string)));
 }
+
+function format_bytes($bytes, $precision = 2)
+{
+    $units = ['B', 'KiB', 'MiB', 'GiB', 'TiB'];
+
+    $bytes = max($bytes, 0);
+    $pow = floor(($bytes ? log($bytes) : 0) / log(1024));
+    $pow = min($pow, count($units) - 1);
+    $bytes /= pow(1024, $pow);
+
+    return round($bytes, $precision) . ' ' . $units[$pow];
+}
