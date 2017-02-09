@@ -1,0 +1,15 @@
+{
+    "name": "jeremiahwinsley/framework-config",
+    "description": "Shared libraries and functions",
+    "type": "library",
+    "license": "MIT",
+    "require": {
+        "php": "^7.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "jeremiahwinsley\\framework\\": "src/"
+        },
+        "files": ["src/functions.php"]
+    }
+}
